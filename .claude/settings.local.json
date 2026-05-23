@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip3 --version)",
+      "Bash(pip3 list *)",
+      "Bash(pip3 show *)",
+      "WebSearch",
+      "WebFetch(domain:langchain-ai.github.io)",
+      "Bash(python3 -c \"import anthropic; help\\(anthropic.Anthropic\\)\")",
+      "Bash(python3 *)",
+      "Bash(pip3 install *)",
+      "Bash(pip list *)",
+      "Bash(pip install *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

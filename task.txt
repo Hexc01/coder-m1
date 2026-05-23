@@ -1,0 +1,7 @@
+多智能体软件工程Agent：基于Memory-Augmented Multi-Agent的自主代码生成系统
+	Python | Claude Code | LangGraph | MCP | Multi-Agent RL | vLLM | Vector Memory
+基于Claude Code构建面向复杂软件工程任务的多智能体协作系统，实现需求拆解、代码生成、工具调用、自动测试与错误修复闭环，支持长任务持续执行与仓库级代码理解。
+1.多智能体架构设计：基于LangGraph构建Planner / Coder / Reviewer / Tool-Agent四类协作Agent，通过DAG工作流管理任务路由与状态同步。Planner负责需求分解与子任务调度，Coder生成代码与补丁，Reviewer基于测试反馈执行静态分析与代码审查，Tool-Agent统一管理Shell、Git、Web Search与文件系统等MCP工具调用，实现类Claude Code的自主工程执行链路。
+2.Memory-Augmented Agent机制：构建分层Agent Memory系统，将短期对话状态、历史错误轨迹、代码patch与仓库知识分别存储于KV Cache与向量数据库中；通过Retrieval-Augmented Memory动态召回历史修复策略与相似任务上下文，降低长链任务中的上下文遗忘问题。引入memory reflection机制，在任务结束后自动总结失败原因与有效修复路径，用于后续Agent决策增强。
+3.Multi-Agent强化学习优化：针对多Agent协作中的重复规划与无效工具调用问题，引入Multi-Agent RL策略优化框架。基于任务成功率、单步token开销、测试通过率与工具调用次数构建联合奖励函数，并通过group-based policy optimization优化Agent间协作策略。在SWE-Bench风格任务上，平均工具调用次数下降31%，端到端任务成功率提升18%。
+4.工程与推理优化：基于vLLM部署多Agent推理服务，结合continuous batching与PagedAttention 优化高并发Agent调度效率；采用异步事件流与增量checkpoint实现长任务恢复机制，支持单任务持续运行超过30分钟。系统支持仓库级代码索引、增量patch提交与自动回滚，能够稳定完成中大型代码库中的多文件修改任务。
