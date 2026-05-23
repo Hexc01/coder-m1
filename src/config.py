@@ -3,9 +3,10 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    # LLM
+    # LLM (mimo uses Anthropic-compatible API)
     anthropic_api_key: str = ""
-    model_name: str = "claude-sonnet-4-20250514"
+    anthropic_base_url: str = "https://token-plan-cn.xiaomimimo.com/anthropic"
+    model_name: str = "mimo-v2.5-pro"
     max_tokens: int = 4096
 
     # Paths
