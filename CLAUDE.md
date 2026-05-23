@@ -2,7 +2,8 @@
 
 ## Overview
 Memory-Augmented Multi-Agent system for autonomous software engineering tasks.
-LangGraph DAG workflow orchestrating 4 agent types with ChromaDB vector memory and Claude API.
+LangGraph DAG workflow orchestrating 4 agent types with ChromaDB vector memory.
+LLM backend: mimo-v2.5-pro via Anthropic-compatible API.
 
 ## Quick Start
 ```bash
@@ -41,8 +42,9 @@ pytest tests/ -v
 
 ## Configuration
 All config via env vars or `src/config.py`:
-- `ANTHROPIC_API_KEY` — Required
-- `MODEL_NAME` — Default: claude-sonnet-4-20250514
+- `ANTHROPIC_API_KEY` — Required (mimo API key)
+- `ANTHROPIC_BASE_URL` — Default: https://token-plan-cn.xiaomimimo.com/anthropic
+- `MODEL_NAME` — Default: mimo-v2.5-pro
 - `MAX_ITERATIONS` — Default: 50
 - `MEMORY_DB_PATH` — Default: ./data/memory_db
 - `CHECKPOINT_DB_PATH` — Default: ./data/checkpoints/checkpoints.db
