@@ -56,3 +56,6 @@ All config via env vars or `src/config.py`:
 - `pytest` + `pytest-asyncio` for tests (asyncio_mode = "auto")
 - `ruff` for linting (line-length 100)
 - Commit messages: imperative mood, e.g. "Add planner agent implementation"
+
+## Scope Notes
+- **RL optimization (Multi-Agent RL, reward function, group-based policy optimization) is deferred** — focus on core multi-agent system + memory + engineering first. Do NOT implement RL-related code until core is stable.
