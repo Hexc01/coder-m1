@@ -1,0 +1,5 @@
+{
+  "id": "bug-fix-001",
+  "request": "Fix the bug in the calculate_average function: it crashes with ZeroDivisionError when given an empty list. Add proper error handling and return 0 for empty lists.",
+  "repo_path": null
+}
