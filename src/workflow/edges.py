@@ -46,8 +46,7 @@ def route_after_subtask(state: GraphState) -> str:
     if idx >= len(state["subtasks"]):
         return "memory_reflect"
     subtask = state["subtasks"][idx]
-    if subtask.assigned_agent == "tool_agent":
-        return "tool_agent"
+    # All subtasks go through coder first; coder sets pending_tool_request if needed
     return "coder"
 
 

@@ -112,11 +112,6 @@ class ReviewerAgent(BaseAgent):
             full = Path(repo_path) / candidate
             if full.exists():
                 return candidate
-        # Search for any test file that might test this module
-        test_dir = Path(repo_path) / "tests"
-        if test_dir.exists():
-            for f in test_dir.glob("test_*.py"):
-                return str(f.relative_to(repo_path))
         return None
 
     def _approve(self, subtask_id: str) -> dict:

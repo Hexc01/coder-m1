@@ -109,7 +109,7 @@ class GraphState(TypedDict):
 
     # Engineering
     repo_path: str | None
-    checkpoint_id: str | None
+    run_checkpoint_id: str | None
 
 
 def create_initial_state(
@@ -139,5 +139,5 @@ def create_initial_state(
         "max_iterations": max_iterations,
         "error_log": [],
         "repo_path": repo_path,
-        "checkpoint_id": None,
+        "run_checkpoint_id": None,
     }
