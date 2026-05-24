@@ -1,0 +1,5 @@
+{
+  "id": "refactor-001",
+  "request": "Refactor the project: extract all configuration constants into a config.py module, add type hints to all functions, and add docstrings to all public functions.",
+  "repo_path": null
+}

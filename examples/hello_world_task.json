@@ -1,0 +1,5 @@
+{
+  "id": "hello-world-001",
+  "request": "Create a Python file hello.py that prints 'Hello, World!' when run. Also create a test file test_hello.py that verifies the output.",
+  "repo_path": null
+}
