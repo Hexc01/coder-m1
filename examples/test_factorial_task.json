@@ -1,0 +1,5 @@
+{
+  "id": "test-factorial-001",
+  "request": "Create a Python module math_utils.py with a factorial function that handles negative numbers (raise ValueError) and zero (return 1). Then create test_math_utils.py with pytest tests covering positive numbers, zero, negative input, and large numbers. Run the tests to make sure they pass.",
+  "repo_path": "/tmp/coder-m1-test"
+}
