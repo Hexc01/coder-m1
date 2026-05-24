@@ -63,6 +63,11 @@ class CoderAgent(BaseAgent):
             review = state["latest_review"]
             if review.issues:
                 parts.append(f"\nPrevious review issues to fix: {review.issues}")
+            if review.suggestions:
+                parts.append(f"Suggestions: {review.suggestions}")
+            if review.test_results and review.test_results.get("exit_code", 0) != 0:
+                parts.append(f"\nTest output from previous attempt:\n{review.test_results['output'][:1000]}")
+                parts.append("\nThe previous version FAILED tests. Fix the issues above.")
 
         parts.append(
             '\nGenerate a code patch. Output JSON: {"file_path": str, "old_content": str, '
